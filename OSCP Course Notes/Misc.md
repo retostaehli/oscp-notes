@@ -1,0 +1,13 @@
+- Always try the password combination of `username:username`
+- Always try all found passwords on different accounts, password reuse is a thing!
+- If a reverse shell does not work, try to change the port number (i.e `nc -lvnp 443` instead of `nc -lvnp 9001`). Focus on common ports like 80, 443, 53 etc. that are most likely to be open outbound
+- If a windows command over a webshell does not work, try prepending `cmd /c` or `powershell -c`
+- Use reverts if something you are sure should work is not working
+- Always try all found credentials! Also make use of the `--local-auth` flag in `nxc`
+- If a reverse-shell onliner is not working, try creating an executable revershell and hosting it. Dont forget to make it executable using `chmod +x` once downloaded to the target.
+- If problems with the VPN arise, try lowering the MTU with `sudo ifconfig tun0 mtu 1250`
+- Do try to bruteforce using rockyou.txt if spraying with known passwords does not work. Think about crafting your own password list as well
+- Search for Ports, Application Names and version etc. on Google!
+- Remember `pspy` to check for arguments being passed to processes being spawned
+- For Web-Endpoints, try to change the request type (i.e to `POST`). Try all endpoints with this method!
+- If we have write access to some remote directory (i.e via `smb`or `ftp`) try to combine this with uploading a webshell that would give us RCE
